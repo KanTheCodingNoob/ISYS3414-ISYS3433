@@ -1,0 +1,18 @@
+\documentclass{report}
+\usepackage{enumerate}
+
+\begin{document}
+
+\section*{QUESTION 1}
+\begin{enumerate}[a)]
+	\item $ \pi_{Client}(SALE) $
+	\item $ \pi_{Item}(\sigma_{Client = 'Cilla'}(SALE)) $
+	\item $ \pi_{Staff}(\sigma_{SDate = '19980311'}(SALE)) $
+	\item $ \pi_{Type}(\sigma_{NumStock \leq 0}(STOCK)) $
+	\item $ \pi_{Type}(ITEM) - \pi_{Item}(SALE) $
+	\item $ \pi_{Name}(\sigma_{Position = 'Clerk'}(STAFF)) - \pi_{Staff}(SALE) $
+	\item $ \pi_{Position}(STAFF \bowtie_{STAFF.Name = SALE.Staff}(SALE)) $
+	\item $ \sigma_{NumSold > NumStock}(SALE \bowtie_{SALE.Item = STOCK.Type}(STOCK)) $
+\end{enumerate}
+
+\end{document}
