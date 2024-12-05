@@ -13,9 +13,11 @@ create table visitor (
 create table artist (
     their_name varchar(17),
     birthplace sdo_geo_addr,
+    age number(3, 0),
     style_of_art clob,
+    artist_id varchar(6),
 
-    primary key (their_name)
+    primary key (artist_id)
 );
 
 create table artwork (
@@ -44,11 +46,12 @@ create table customer (
     on delete cascade
 );
 
-create table customers_who_buy_artworks (
+create table artwork_transaction (
     customer varchar(747),
     artwork varchar(33),
+    transaction_id varchar(6),
 
-    primary key (customer, artwork),
+    primary key (transaction_id),
     foreign key (customer) references customer (unique_name)
     on delete cascade,
     foreign key (artwork) references artwork (unique_title)
@@ -87,7 +90,6 @@ create table ticket (
 create table artworks_featured (
     artwork varchar(33),
     exhibition varchar(4),
-    art_style clob,
     location_in_gallery clob,
 
     primary key (artwork, exhibition),
