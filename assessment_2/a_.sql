@@ -4,7 +4,7 @@ create table visitor (
     name varchar(747),
     sex clob,
     phone_number varchar(15) check (regexp_like(phone_number, '^[0-9]+$') and length(phone_number) >= 7),
-    bank_account number,
+    bank_account varchar(34) check (regexp_like(bank_account, '^[0-9]+$') and length(bank_account) >= 6),
     birth_date date,
 
     primary key (bank_account)
@@ -39,7 +39,7 @@ create table customer (
     address clob,
     total_amount_of_money_they_spent_on_the_gallery number,
     likes_of_customers clob,
-    bank_account number,
+    bank_account varchar(34) check (regexp_like(bank_account, '^[0-9]+$') and length(bank_account) >= 6),
 
     primary key (unique_name),
     foreign key (bank_account) references visitor (bank_account)
@@ -81,8 +81,12 @@ create table ticket (
     price number,
     exhibition_id varchar(4),
     purchase_date date,
+    person varchar(34) check (regexp_like(person, '^[0-9]+$') and length(person) >= 6),
+
     primary key (ticket_id),
     foreign key (exhibition_id) references exhibition (exhibition_id)
+    on delete cascade,
+    foreign key (person) references visitor (bank_account)
     on delete cascade
 );
 
@@ -100,7 +104,7 @@ create table artworks_featured (
 
 create table visitor_bank_details (
     visitor_id varchar(8),
-    bank_number number,
+    bank_number varchar(34) check (regexp_like(bank_number, '^[0-9]+$') and length(bank_number) >= 6),
     bank clob,
 
     primary key (visitor_id),
@@ -109,11 +113,11 @@ create table visitor_bank_details (
 );
 
 insert into visitor (name, sex, phone_number, bank_account, birth_date)
-    select 'Nguyễn Văn A', 'Male', '0987654321', 123456789, '01/01/1990' from dual union all
-    select 'Trần Thị B', 'Female', '0123456789', 987654321, '05/15/1995' from dual union all
-    select 'Lê Văn C', 'Male', '0901234567', 321654987, '11/22/1988' from dual union all
-    select 'Dương Thị D', 'Female', '0912345678', 456789123, '03/08/1992' from dual union all
-    select 'Hoàng Văn E', 'Male', '0923456789', 789123456, '07/17/1985' from dual;
+    select 'Nguyễn Văn A', 'Male', '0987654321', '123456789', '01/01/1990' from dual union all
+    select 'Trần Thị B', 'Female', '0123456789', '987654321', '05/15/1995' from dual union all
+    select 'Lê Văn C', 'Male', '0901234567', '321654987', '11/22/1988' from dual union all
+    select 'Dương Thị D', 'Female', '0912345678', '456789123', '03/08/1992' from dual union all
+    select 'Hoàng Văn E', 'Male', '0923456789', '789123456', '07/17/1985' from dual;
 
 insert into artist (their_name, birthplace, age, style_of_art, artist_id)
     select 'Picasso', '20 Holmes Street, London, United Kingdom', 78, 'Cubism', '786567' from dual union all
@@ -130,11 +134,11 @@ insert into artwork (artist, year_it_was_made, unique_title, type_of_art, price)
     select '236547', 1946, 'Frieda and Diego Rivera', 'etc.', 780000000 from dual;
 
 insert into customer (unique_name, address, total_amount_of_money_they_spent_on_the_gallery, likes_of_customers, bank_account)
-    select 'John Doe', '200 Main Street, Los Angeles, USA', 1000, 'Impressionism', 123456789 from dual union all
-    select 'Jane Smith', '20 Downing Street, London, United Kingdom', 2000, 'Contemporary Art', 987654321 from dual union all
-    select 'Maria Gonzalez', '305 Grand Via Street, Madrid, Spain', 800, 'Surrealism', 321654987 from dual union all
-    select 'Pierre Dupont', '500 Marseilles Street, Paris, France', 1200, 'Impressionism', 456789123 from dual union all
-    select 'Adam Scottfield', '10 MacArthur Boulevard Street, Washington DC, United States', 3000, 'Renaissance', 789123456 from dual;
+    select 'John Doe', '200 Main Street, Los Angeles, USA', 1000, 'Impressionism', '123456789' from dual union all
+    select 'Jane Smith', '20 Downing Street, London, United Kingdom', 2000, 'Contemporary Art', '987654321' from dual union all
+    select 'Maria Gonzalez', '305 Grand Via Street, Madrid, Spain', 800, 'Surrealism', '321654987' from dual union all
+    select 'Pierre Dupont', '500 Marseilles Street, Paris, France', 1200, 'Impressionism', '456789123' from dual union all
+    select 'Adam Scottfield', '10 MacArthur Boulevard Street, Washington DC, United States', 3000, 'Renaissance', '789123456' from dual;
 
 insert into artwork_transaction (customer, artwork, transaction_id)
     select 'John Doe', 'Mona Lisa', '788678' from dual union all
@@ -157,12 +161,12 @@ insert into exhibition (exhibition_id, exhibition_name, start_date, end_date)
     select '7328', 'Impressionism', '01/04/2024', '05/31/2024' from dual union all
     select '3453', 'Abstract Expressionism', '09/01/2024', '10/31/2024' from dual;
 
-insert into ticket (ticket_id, price, exhibition_id, purchase_date)
-    select '41556345', 20, '6789', '03/15/2023' from dual union all
-    select '89089087', 25, '3425', '07/01/2023' from dual union all
-    select '34242534', 25, '9834', '01/17/2024' from dual union all
-    select '78906783', 25, '7328', '02/24/2024' from dual union all
-    select '34523458', 20, '3453', '04/14/2024' from dual;
+insert into ticket (ticket_id, price, exhibition_id, purchase_date, person)
+    select '41556345', 20, '6789', '03/15/2023', '321654987' from dual union all
+    select '89089087', 25, '3425', '07/01/2023', '987654321' from dual union all
+    select '34242534', 25, '9834', '01/17/2024', '123456789' from dual union all
+    select '78906783', 25, '7328', '02/24/2024', '789123456' from dual union all
+    select '34523458', 20, '3453', '04/14/2024', '456789123' from dual;
 
 insert into artworks_featured (artwork, exhibition, location_in_gallery)
     select 'Mona Lisa', '3425', 'North Gallery' from dual union all
@@ -172,8 +176,8 @@ insert into artworks_featured (artwork, exhibition, location_in_gallery)
     select 'Frieda and Diego Rivera', '3453', 'West Gate' from dual;
 
  insert into visitor_bank_details (visitor_id, bank_number, bank)
-    select '34567345', 123456789, 'West Bank' from dual union all
-    select '90907895', 987654321, 'Westfield Bank' from dual union all
-    select '32134548', 321654987, 'MSBNC Bank' from dual union all
-    select '34824852', 456789123, 'VCB Bank' from dual union all
-    select '78906785', 789123456, 'Bank of America' from dual;
+    select '34567345', '123456789', 'West Bank' from dual union all
+    select '90907895', '987654321', 'Westfield Bank' from dual union all
+    select '32134548', '321654987', 'MSBNC Bank' from dual union all
+    select '34824852', '456789123', 'VCB Bank' from dual union all
+    select '78906785', '789123456', 'Bank of America' from dual;
