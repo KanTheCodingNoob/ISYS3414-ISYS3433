@@ -12,7 +12,7 @@ create table visitor (
 
 create table artist (
     their_name varchar(17),
-    birthplace sdo_geo_addr,
+    birthplace clob,
     age number(3, 0),
     style_of_art clob,
     artist_id varchar(6),
@@ -36,7 +36,7 @@ create table artwork (
 
 create table customer (
     unique_name varchar(747),
-    address sdo_geo_addr,
+    address clob,
     total_amount_of_money_they_spent_on_the_gallery number,
     likes_of_customers clob,
     bank_account number,
@@ -116,96 +116,11 @@ insert into visitor (name, sex, phone_number, bank_account, birth_date)
     select 'Hoàng Văn E', 'Male', '0923456789', 789123456, '07/17/1985' from dual;
 
 insert into artist (their_name, birthplace, age, style_of_art, artist_id)
-    select
-        'Picasso',
-        sdo_geo_addr(
-            'Italy',
-            'Province of Venezia',
-            'Municipality of Venice',
-            'Venice',
-            'San Polo',
-            '30100',
-            'Rio Terrà',
-            'Castello 6219',
-            'Venezianamente Apartments',
-            'San Palo 1225'
-        ),
-        78,
-        'Cubism',
-        '786567'
-    from dual union all
-    select
-        'Monet',
-        sdo_geo_addr(
-            'Germany',
-            'Bavaria',
-            'Bavaria-Ingolstadt',
-            'Ingolstadt',
-            'Adam-Smith-Straße',
-            '85049',
-            null,
-            null,
-            null,
-            null
-         ),
-         67,
-         'Impressionism',
-         '908096'
-    from dual union all
-    select
-        'Van Gogh',
-        sdo_geo_addr(
-            'Netherlands',
-            'North Brabant',
-            'Zundert',
-            'Zundert',
-            null,
-            '4881',
-            null,
-            null,
-            null,
-            null
-        ),
-        56,
-        'Post-Impressionism',
-        '763457'
-    from dual union all
-    select
-        'Da Vinci',
-        sdo_geo_addr(
-            'Italy',
-            'Tuscany',
-            'Florence',
-            'Florence',
-            null,
-            '50122',
-            null,
-            null,
-            null,
-            null
-        ),
-        80,
-        'Renaissance',
-        '890234'
-    from dual union all
-    select
-        'Frida Kahlo',
-        sdo_geo_addr(
-            'Russia',
-            'Leningrad Oblast',
-            'Sosnovy Bor',
-            'Ivangorod',
-            'Ivangorodskoye Urban Settlement',
-            '188490',
-            null,
-            null,
-            null,
-            null
-        ),
-        76,
-        'Surrealism',
-        '236547'
-    from dual;
+    select 'Picasso', '20 Holmes Street, London, United Kingdom', 78, 'Cubism', '786567' from dual union all
+    select 'Monet', '100 Valmes Street, Seattle, USA', 67, 'Impressionism', '908096' from dual union all
+    select 'Van Gogh', '250 Lourve Street, Paris, France', 56, 'Post-Impressionism', '763457' from dual union all
+    select 'Da Vinci', '147 Milan Street, Milan, Italy', 80, 'Renaissance', '890234' from dual union all
+    select 'Frida Kahlo', '890 Olmec Street, Mexico City, Mexico', 76, 'Surrealism', '236547' from dual;
 
 insert into artwork (artist, year_it_was_made, unique_title, type_of_art, price)
     select '890234', 1503, 'Mona Lisa', 'Poetess', 1000000000 from dual union all
@@ -215,96 +130,11 @@ insert into artwork (artist, year_it_was_made, unique_title, type_of_art, price)
     select '236547', 1946, 'Frieda and Diego Rivera', 'etc.', 780000000 from dual;
 
 insert into customer (unique_name, address, total_amount_of_money_they_spent_on_the_gallery, likes_of_customers, bank_account)
-    select
-        'John Doe',
-        sdo_geo_addr(
-            'USA',
-            'California',
-            'Los Angeles',
-            'Los Angeles County',
-            '90001',
-            'Main Street',
-            '123',
-            '4B',
-            'Apt 2',
-            null
-        ),
-        1000,
-        'Impressionism',
-        123456789
-    from dual union all
-    select
-        'Jane Smith',
-        sdo_geo_addr(
-            'UK',
-            'England',
-            'London',
-            'Greater London',
-            'SW1A 0AA',
-            'Downing Street',
-            '10',
-            null,
-            null,
-            null
-        ),
-        2000,
-        'Contemporary Art',
-        987654321
-    from dual union all
-    select
-        'Maria Gonzalez',
-         sdo_geo_addr(
-             'Spain',
-             'Madrid',
-             'Centro',
-             '28001',
-             'Gran Vía',
-             '42',
-             null,
-             null,
-             null,
-             null
-         ),
-         800,
-         'Surrealism',
-         321654987
-    from dual union all
-    select
-        'Pierre Dupont',
-        sdo_geo_addr(
-            'France',
-            'Île-de-France',
-            'Paris',
-            'Paris',
-            '75001',
-            'Rue de Rivoli',
-            null,
-            null,
-            null,
-            null
-        ),
-        1200,
-        'Impressionism',
-        456789123
-    from dual union all
-    select
-        'Adam Scottfield',
-        sdo_geo_addr(
-            'United States',
-            'Washington DC',
-            'Burleith',
-            '20001',
-            'MacArthur Boulevard NW',
-            null,
-            null,
-            null,
-            null,
-            null
-        ),
-        3000,
-        'Renaissance',
-        789123456
-    from dual;
+    select 'John Doe', '200 Main Street, Los Angeles, USA', 1000, 'Impressionism', 123456789 from dual union all
+    select 'Jane Smith', '20 Downing Street, London, United Kingdom', 2000, 'Contemporary Art', 987654321 from dual union all
+    select 'Maria Gonzalez', '305 Grand Via Street, Madrid, Spain', 800, 'Surrealism', 321654987 from dual union all
+    select 'Pierre Dupont', '500 Marseilles Street, Paris, France', 1200, 'Impressionism', 456789123 from dual union all
+    select 'Adam Scottfield', '10 MacArthur Boulevard Street, Washington DC, United States', 3000, 'Renaissance', 789123456 from dual;
 
 insert into artwork_transaction (customer, artwork, transaction_id)
     select 'John Doe', 'Mona Lisa', '788678' from dual union all
@@ -323,8 +153,8 @@ insert into staff (staff_id, name, position, salary)
 insert into exhibition (exhibition_id, exhibition_name, start_date, end_date)
     select '6789', 'Surrealism Art Room', '03/13/2023', '05/17/2023' from dual union all
     select '3425', 'Art of the Renaissance', '11/01/2023', '12/31/2023' from dual union all
-    select '9834', 'Modern Masters', '01/15/2024', '03/15/2024' from dual union all
-    select '7328', 'Impressionism', '01/04/2024', '05/31/2024' from dual union all
+    select '9834', 'Modern Masters', '01/15/2024', '03/15/2024' from dual union all
+    select '7328', 'Impressionism', '01/04/2024', '05/31/2024' from dual union all
     select '3453', 'Abstract Expressionism', '09/01/2024', '10/31/2024' from dual;
 
 insert into ticket (ticket_id, price, exhibition_id, purchase_date)
