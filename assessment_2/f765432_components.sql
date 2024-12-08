@@ -33,7 +33,7 @@ prompt APPLICATION 765432 - Art Gallery management system
 -- Application Export:
 --   Application:     765432
 --   Name:            Art Gallery management system
---   Date and Time:   00:12 Saturday December 7, 2024
+--   Date and Time:   07:18 Sunday December 8, 2024
 --   Exported By:     S4075654@RMIT.EDU.VN
 --   Flashback:       0
 --   Export Type:     Component Export
@@ -44,6 +44,7 @@ prompt APPLICATION 765432 - Art Gallery management system
 --     BUILD_OPTION: 90166687938892516093
 --     BUILD_OPTION: 90166688285150516093
 --     LIST: 90165124327088511564
+--     LIST: 90166484691136515098
 --     LIST: 90165817120529511789
 --     LIST: 90166691856679516096
 --     LIST: 90166672185258515752
@@ -87,7 +88,6 @@ prompt APPLICATION 765432 - Art Gallery management system
 --     PAGE: 10053
 --     PAGE: 10054
 --     PAGE: 10060
---     PAGE: 10061
 --   Manifest End
 --   Version:         24.1.5
 --   Instance ID:     63113759365424
@@ -104,11 +104,11 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(90165124327088511564)
 ,p_name=>'Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>15592464920458
+,p_version_scn=>15592621794380
 ,p_created_on=>wwv_flow_imp.dz('20241206153021Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153337Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093525Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165831154124511812)
@@ -126,121 +126,121 @@ wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165832699055511813)
 ,p_list_item_display_sequence=>20
 ,p_list_item_link_text=>'Visitor'
-,p_list_item_link_target=>'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-users'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153024Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153024Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207091116Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165849363624511916)
 ,p_list_item_display_sequence=>30
 ,p_list_item_link_text=>'Artist'
-,p_list_item_link_target=>'f?p=&APP_ID.:4:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:4:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-hipster'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153025Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153025Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207091154Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165868932476512257)
 ,p_list_item_display_sequence=>40
 ,p_list_item_link_text=>'Artwork'
-,p_list_item_link_target=>'f?p=&APP_ID.:6:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:6:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153028Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153028Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093323Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165887062724512601)
 ,p_list_item_display_sequence=>50
 ,p_list_item_link_text=>'Customer'
-,p_list_item_link_target=>'f?p=&APP_ID.:8:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:8:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-users-alt'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153032Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153032Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093127Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165909013198512951)
 ,p_list_item_display_sequence=>60
 ,p_list_item_link_text=>'Artwork Transaction'
-,p_list_item_link_target=>'f?p=&APP_ID.:10:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file-text'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153035Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153035Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093335Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165931388376513297)
 ,p_list_item_display_sequence=>70
 ,p_list_item_link_text=>'Staff'
-,p_list_item_link_target=>'f?p=&APP_ID.:12:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:12:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-user-headset'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153039Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153039Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093256Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165949689013513642)
 ,p_list_item_display_sequence=>80
 ,p_list_item_link_text=>'Exhibition'
-,p_list_item_link_target=>'f?p=&APP_ID.:14:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:14:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-location'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153042Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153042Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093421Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165963869729513992)
 ,p_list_item_display_sequence=>90
 ,p_list_item_link_text=>'Ticket'
-,p_list_item_link_target=>'f?p=&APP_ID.:16:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:16:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-barcode-read'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153045Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153045Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093435Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165983406406514350)
 ,p_list_item_display_sequence=>100
 ,p_list_item_link_text=>'Artworks Featured'
-,p_list_item_link_target=>'f?p=&APP_ID.:18:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:18:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file-signature'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153049Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153049Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093453Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90165997912615514690)
 ,p_list_item_display_sequence=>110
 ,p_list_item_link_text=>'Visitor Bank Details'
-,p_list_item_link_target=>'f?p=&APP_ID.:20:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_icon=>'fa-table'
+,p_list_item_link_target=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-credit-card-terminal'
 ,p_list_item_current_type=>'TARGET_PAGE'
 ,p_created_on=>wwv_flow_imp.dz('20241206153052Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153052Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207093525Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(90166666952367515749)
@@ -406,6 +406,140 @@ wwv_flow_imp_shared.create_list_item(
 ,p_updated_on=>wwv_flow_imp.dz('20241206153103Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
 ,p_updated_by=>'S4075654@RMIT.EDU.VN'
+);
+end;
+/
+prompt --application/shared_components/navigation/lists/page_navigation
+begin
+wwv_flow_imp_shared.create_list(
+ p_id=>wwv_flow_imp.id(90166484691136515098)
+,p_name=>'Page Navigation'
+,p_list_status=>'PUBLIC'
+,p_version_scn=>15592620771823
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207092958Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166485015756515098)
+,p_list_item_display_sequence=>20
+,p_list_item_link_text=>'Visitor'
+,p_list_item_link_target=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-users'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207090745Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166485452695515098)
+,p_list_item_display_sequence=>30
+,p_list_item_link_text=>'Artist'
+,p_list_item_link_target=>'f?p=&APP_ID.:4:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-hipster'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207091029Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166485803403515099)
+,p_list_item_display_sequence=>40
+,p_list_item_link_text=>'Artwork'
+,p_list_item_link_target=>'f?p=&APP_ID.:6:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207091314Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166486204751515099)
+,p_list_item_display_sequence=>50
+,p_list_item_link_text=>'Customer'
+,p_list_item_link_target=>'f?p=&APP_ID.:8:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-users-alt'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207091404Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166486632877515099)
+,p_list_item_display_sequence=>60
+,p_list_item_link_text=>'Artwork Transaction'
+,p_list_item_link_target=>'f?p=&APP_ID.:10:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file-text'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207091456Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166487080770515099)
+,p_list_item_display_sequence=>70
+,p_list_item_link_text=>'Staff'
+,p_list_item_link_target=>'f?p=&APP_ID.:12:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-user-headset'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207091552Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166487423625515100)
+,p_list_item_display_sequence=>80
+,p_list_item_link_text=>'Exhibition'
+,p_list_item_link_target=>'f?p=&APP_ID.:14:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-location'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207091920Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166487844262515100)
+,p_list_item_display_sequence=>90
+,p_list_item_link_text=>'Ticket'
+,p_list_item_link_target=>'f?p=&APP_ID.:16:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-barcode-read'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207092343Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166488272183515100)
+,p_list_item_display_sequence=>100
+,p_list_item_link_text=>'Artworks Featured'
+,p_list_item_link_target=>'f?p=&APP_ID.:18:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-file-signature'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207092631Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(90166488640582515100)
+,p_list_item_display_sequence=>110
+,p_list_item_link_text=>'Visitor Bank Details'
+,p_list_item_link_target=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-credit-card-alt'
+,p_list_item_current_type=>'TARGET_PAGE'
+,p_created_on=>wwv_flow_imp.dz('20241206153057Z')
+,p_updated_on=>wwv_flow_imp.dz('20241207092958Z')
+,p_created_by=>'S4075654@RMIT.EDU.VN'
+,p_updated_by=>'TANPHAT'
 );
 end;
 /
@@ -8644,77 +8778,6 @@ wwv_flow_imp_page.create_page_plug(
   'expand_shortcuts', 'N',
   'output_as', 'HTML',
   'show_line_breaks', 'Y')).to_clob
-,p_created_on=>wwv_flow_imp.dz('20241206153103Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153103Z')
-,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
-);
-end;
-/
-prompt --application/pages/delete_10061
-begin
-wwv_flow_imp_page.remove_page (p_flow_id=>wwv_flow.g_flow_id, p_page_id=>10061);
-end;
-/
-prompt --application/pages/page_10061
-begin
-wwv_flow_imp_page.create_page(
- p_id=>10061
-,p_name=>'Help'
-,p_alias=>'HELP'
-,p_page_mode=>'MODAL'
-,p_step_title=>'Help'
-,p_warn_on_unsaved_changes=>'N'
-,p_autocomplete_on_off=>'OFF'
-,p_page_template_options=>'#DEFAULT#'
-,p_required_patch=>wwv_flow_imp.id(90165820402092511797)
-,p_dialog_chained=>'N'
-,p_protection_level=>'C'
-,p_page_component_map=>'25'
-,p_created_on=>wwv_flow_imp.dz('20241206153103Z')
-,p_last_updated_on=>wwv_flow_imp.dz('20241206153103Z')
-,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_last_updated_by=>'S4075654@RMIT.EDU.VN'
-);
-wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(90166662265562515742)
-,p_plug_name=>'Search Dialog'
-,p_region_template_options=>'#DEFAULT#'
-,p_escape_on_http_output=>'Y'
-,p_plug_template=>wwv_flow_imp.id(90165160651917511586)
-,p_plug_display_sequence=>10
-,p_function_body_language=>'PLSQL'
-,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'for l_page in ( select page_title,',
-'                       help_text',
-'                  from apex_application_pages',
-'                 where application_id = :APP_ID',
-'                   and page_id = :P10061_PAGE_ID )',
-'loop',
-'    if l_page.help_text is null then',
-'        return ''No help is available for this page.'';',
-'    else',
-'        return case when substr(l_page.help_text, 1, 3) != ''<p>'' then ''<p>'' end ||',
-'               apex_application.do_substitutions(l_page.help_text) ||',
-'               case when substr(trim(l_page.help_text), -4) != ''</p>'' then ''</p>'' end;',
-'    end if;',
-'end loop;'))
-,p_plug_source_type=>'NATIVE_DYNAMIC_CONTENT'
-,p_plug_query_num_rows=>15
-,p_created_on=>wwv_flow_imp.dz('20241206153103Z')
-,p_updated_on=>wwv_flow_imp.dz('20241206153103Z')
-,p_created_by=>'S4075654@RMIT.EDU.VN'
-,p_updated_by=>'S4075654@RMIT.EDU.VN'
-);
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(90166662666445515743)
-,p_name=>'P10061_PAGE_ID'
-,p_item_sequence=>10
-,p_item_plug_id=>wwv_flow_imp.id(90166662265562515742)
-,p_display_as=>'NATIVE_HIDDEN'
-,p_lov_display_extra=>'NO'
-,p_protection_level=>'S'
-,p_attribute_01=>'Y'
 ,p_created_on=>wwv_flow_imp.dz('20241206153103Z')
 ,p_updated_on=>wwv_flow_imp.dz('20241206153103Z')
 ,p_created_by=>'S4075654@RMIT.EDU.VN'
