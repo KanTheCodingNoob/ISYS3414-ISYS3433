@@ -1,0 +1,46 @@
+CREATE TABLE Bus_type (
+	code VARCHAR PRIMARY KEY,
+	no_seat VARCHAR,
+	WC VARCHAR,
+	AC VARCHAR
+);
+CREATE TABLE Tour_type (
+	code VARCHAR PRIMARY KEY,
+	name VARCHAR,
+	route VARCHAR,
+	base_price VARCHAR,
+	dates VARCHAR,
+	max_pax VARCHAR,
+	expected_pax VARCHAR,
+	bus_type VARCHAR REFERENCES Bus_type(code)
+);
+CREATE TABLE Tour_guide (
+	TGID VARCHAR PRIMARY KEY
+);
+CREATE TABLE Bus (
+	BID VARCHAR PRIMARY KEY,
+	type VARCHAR REFERENCES Bus_type(code)
+);
+CREATE TABLE Driver (
+	DID VARCHAR PRIMARY KEY
+);
+CREATE TABLE Tour (
+	TID VARCHAR PRIMARY KEY,
+	season VARCHAR,
+	extra_fee VARCHAR,
+	price VARCHAR,
+	type VARCHAR REFERENCES Tour_type(code),
+	guide VARCHAR REFERENCES Tour_guide(TGID),
+	bus VARCHAR REFERENCES Bus(BID),
+	driver VARCHAR REFERENCES Driver(DID)
+);
+CREATE TABLE Booking (
+	BID VARCHAR PRIMARY KEY,
+	tour VARCHAR REFERENCES Tour(TID)
+);
+CREATE TABLE Can_drive (
+	bus VARCHAR REFERENCES Bus_type(code),
+	driver VARCHAR REFERENCES Driver(DID),
+	
+	PRIMARY KEY (bus, driver)
+);
