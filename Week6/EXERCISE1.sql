@@ -1,5 +1,5 @@
 SELECT employee.name, department.name
-FROM employee JOIN department
+FROM employee LEFT JOIN department
 ON employee.department = department.code;
 
 SELECT employee.name, employees.name
