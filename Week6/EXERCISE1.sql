@@ -8,24 +8,36 @@ ON employee.department = employees.department
 AND employee.name < employees.name;
 
 WITH history_and_position AS (
-	SELECT history.*, position.code, position.income
-	FROM history LEFT OUTER JOIN position
-    	ON history.position = position.code  
+        SELECT history.*, position.code, position.income
+        FROM history LEFT JOIN position
+        ON history.position = position.code
 ),
-history_before_20120101_and_position AS (
-	SELECT *
-    	FROM history_and_position
-    	WHERE start_date < '2012-01-01'  
+histories_and_position AS (
+        SELECT employee histories_and_position_employee, MIN(start_date) AS min_start_date
+        FROM history_and_position
+	GROUP BY histories_and_position_employee
 ),
-history_after_20120101_and_position AS (
-    	SELECT *
-    	FROM history_and_position
-    	WHERE start_date >= '2012-01-01'
+history_and_positions AS (
+	SELECT histories_and_position.histories_and_position_employee history_and_positions_employee, histories_and_position.min_start_date history_and_positions_min_start_date, history_and_position.income history_and_positions_income
+	FROM histories_and_position JOIN history_and_position
+	ON histories_and_position.histories_and_position_employee = history_and_position.employee
+	AND histories_and_position.min_start_date = history_and_position.start_date
+	WHERE start_date < '2012-01-01'
+),
+histories_and_positions AS (
+	SELECT employee histories_and_positions_employee, start_date histories_and_positions_start_date, income histories_and_positions_income
+	FROM history_and_position LEFT JOIN history_and_positions
+	ON history_and_position.employee = history_and_positions.history_and_positions_employee
+	AND history_and_position.start_date = history_and_positions.history_and_positions_min_start_date
+	AND history_and_position.income = history_and_positions.history_and_positions_income
+	WHERE history_and_positions.history_and_positions_employee IS NULL
+	OR history_and_positions.history_and_positions_min_start_date IS NULL
+	OR history_and_positions.history_and_positions_income IS NULL
 )
-SELECT history_after_20120101_and_position.income - history_before_20120101_and_position.income AS income_increasement
-FROM history_after_20120101_and_position JOIN history_before_20120101_and_position
-ON history_after_20120101_and_position.employee = history_before_20120101_and_position.employee
-WHERE history_after_20120101_and_position.income - history_before_20120101_and_position.income = 50;
+SELECT histories_and_positions.histories_and_positions_income - history_and_positions.history_and_positions_income AS income_increasement
+FROM histories_and_positions JOIN history_and_positions
+ON histories_and_positions.histories_and_positions_employee = history_and_positions.history_and_positions_employee
+WHERE histories_and_positions.histories_and_positions_income - history_and_positions.history_and_positions_income = 50;
 
 SELECT name, position
 FROM employee LEFT JOIN position
