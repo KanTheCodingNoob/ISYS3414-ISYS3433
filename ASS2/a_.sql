@@ -1,7 +1,7 @@
 -- -*- mode: orsql; -*-
 
 create table visitor (
-    name varchar(747),
+    name varchar(1000),
     sex clob,
     phone_number varchar(15) check (regexp_like(phone_number, '^[0-9]+$') and length(phone_number) >= 7),
     bank_account varchar(34) check (regexp_like(bank_account, '^[0-9]+$') and length(bank_account) >= 6),
@@ -11,7 +11,7 @@ create table visitor (
 );
 
 create table artist (
-    their_name varchar(17),
+    name varchar(17),
     birthplace clob,
     age number(3, 0),
     style_of_art clob,
@@ -22,7 +22,7 @@ create table artist (
 
 create table artwork (
     artist varchar(6),
-    year_it_was_made number(38, 0),
+    year_made number(4, 0),
     unique_title varchar(33),
     type_of_art varchar(35) not null,
     price number,
@@ -37,7 +37,7 @@ create table artwork (
 create table customer (
     unique_name varchar(747),
     address clob,
-    total_amount_of_money_they_spent_on_the_gallery number,
+    total_money_spent number,
     likes_of_customers clob,
     bank_account varchar(34) check (regexp_like(bank_account, '^[0-9]+$') and length(bank_account) >= 6),
 
